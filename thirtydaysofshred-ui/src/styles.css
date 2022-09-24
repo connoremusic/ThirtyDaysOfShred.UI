@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background-image: url('/assets/images/ConcertBackground1.jpg');
+  background-blend-mode: soft-light;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin: 0;
+}
+
+.btn-shred {
+  color: #fff;
+  background-color: #c80f0f;
+  border-color: darkred;
+}
+
+.btn-shred:hover {
+  color: #fff;
+  background-color: darkred !important;
+  border-color: darkred;
+}

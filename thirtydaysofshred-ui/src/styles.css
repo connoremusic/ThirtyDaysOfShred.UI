@@ -19,3 +19,7 @@ body {
   background-color: darkred !important;
   border-color: darkred;
 }
+
+.mr-1 {
+  margin-right: 1em;
+}

@@ -20,7 +20,7 @@
         </li>
       </ul>
 
-      <div class="btn-group" dropdown *ngIf="(accountService.currentUser$| async) as user">
+      <div class="btn-group" dropdown *ngIf="(accountService.currentUser$ | async) as user">
         <button id="button-animated" dropdownToggle type="button" class="btn btn-shred dropdown-toggle"
                 aria-controls="dropdown-animated">Welcome, {{user.username | titlecase}}<span class="caret"></span>
         </button>

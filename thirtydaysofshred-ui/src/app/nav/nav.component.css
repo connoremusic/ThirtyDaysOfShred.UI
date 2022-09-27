@@ -1,0 +1,15 @@
+.navbar-brand:hover {
+  scale: 107%;
+  transition: 200ms;
+  -webkit-transition: 200ms;
+}
+
+.navbar-brand {
+  transition: 200ms;
+  -webkit-transition: 200ms;
+}
+
+.nav-item:hover {
+  scale: 107%;
+}
+

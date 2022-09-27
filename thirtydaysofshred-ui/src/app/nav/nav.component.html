@@ -9,10 +9,13 @@
             <a class="nav-link" routerLink="/members" routerLinkActive="active">Members</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/lists" routerLinkActive="active">Lists</a>
+            <a class="nav-link" routerLink="/practice" routerLinkActive="active">Practice</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/messages" routerLinkActive="active">Messages</a>
+            <a class="nav-link" routerLink="/practice/exercises" routerLinkActive="active">Exercises</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/practice/tabs" routerLinkActive="active">Tabs</a>
           </li>
         </ng-container>
         <li class="nav-item">
@@ -25,7 +28,8 @@
                 aria-controls="dropdown-animated">Welcome, {{user.username | titlecase}}<span class="caret"></span>
         </button>
         <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu mt-1" aria-labelledby="button-animated" role="menu">
-          <li role="menuitem"><a class="dropdown-item" href="#">Edit Profile</a></li>
+          <li role="menuitem"><a routerLink="/members/{{user.username}}" class="dropdown-item" href="#">My Profile</a></li>
+          <li role="menuitem"><a routerLink="/member/edit" class="dropdown-item" href="#">Edit Profile</a></li>
           <li role="menuitem"><a class="dropdown-item" href="#" (click)="logout()">Logout</a></li>
         </ul>
       </div>

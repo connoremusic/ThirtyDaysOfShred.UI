@@ -1,7 +1,11 @@
 <div class="row" *ngIf="member">
-
-  <div class="col-12" *ngIf="member">
+  <div class="col-4">
     <h1>My Profile</h1>
+  </div>
+  <div class="col-8">
+    <div class="alert alert-info" *ngIf="editForm.dirty">
+      <strong>Information: </strong>You have made changes.  Any unsaved changes will be lost!
+    </div>
   </div>
 
   <div class="col-4">
@@ -30,31 +34,33 @@
       </div>
       <div class="card-footer">
         <div class="btn-group d-flex">
-          <button class="btn btn-shred">Like</button>
-          <button class="btn btn-success">Message</button>
+          <button [disabled]="!editForm.dirty" form="editForm" class="btn btn-success">Save Changes</button>
         </div>
       </div>
     </div>
   </div>
 
+
   <div class="col-8">
 
     <tabset class="member-tabset">
       <tab heading="About {{member.knownAs}}">
-        <h4>About</h4>
-        <p>{{member.about}}</p>
-        <h4>Influences</h4>
-        <p>{{member.influences}}</p>
-        <h4>Goals</h4>
-        <p *ngFor="let goal of member.goals"></p>
+        <form #editForm="ngForm" id="editForm" (ngSubmit)="updateMember()">
+          <h4>About</h4>
+          <textarea class="form-control" [(ngModel)]="member.about" name="about" rows="6"></textarea>
+          <h4 class="mt-2">Influences</h4>
+          <textarea class="form-control" [(ngModel)]="member.influences" name="influences" rows="6"></textarea>
+          <h4 class="mt-2">Goals</h4>
+          <textarea class="form-control" [(ngModel)]="member.goals" name="goals" rows="6"></textarea>
+        </form>
       </tab>
       <tab heading="Practice Routines">
         <h4>Practice Routines</h4>
-        <p>{{member.practiceRoutines}}</p>
+        <p>Member practice routines</p>
       </tab>
       <tab heading="Favorite Tabs">
         <h4>Favorite Tabs</h4>
-        <p>{{member.favoriteTabs}}</p>
+        <p>Favorite tabs will go here</p>
       </tab>
       <tab heading="Messages">
         <h4>Messages</h4>

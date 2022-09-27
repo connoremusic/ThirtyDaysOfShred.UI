@@ -5,10 +5,14 @@ export interface Member {
   username:         string;
   age:              number;
   knownAs:          string;
+  profileImageUrl:  string;
+  gender:           string;
+  country:          string;
+  about:            string;
+  influences:       string;
+  goals:            string[];
   created:          Date;
   lastActive:       Date;
-  gender:           string;
-  profileImageUrl:  string;
   authoredTabs:     Tab[];
   favoriteTabs:     Tab[];
   likedTabs:        Tab[];

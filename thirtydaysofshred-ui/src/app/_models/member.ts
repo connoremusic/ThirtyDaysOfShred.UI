@@ -1,11 +1,12 @@
 import { Tab } from './tab';
+import { ProfilePhoto } from './profile-photo';
 
 export interface Member {
   id:               number;
   username:         string;
   age:              number;
   knownAs:          string;
-  profileImageUrl:  string;
+  profilePhoto:     ProfilePhoto;
   gender:           string;
   country:          string;
   about:            string;

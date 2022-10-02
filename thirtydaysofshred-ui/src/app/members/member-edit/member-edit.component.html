@@ -10,7 +10,13 @@
 
   <div class="col-4">
     <div class="card">
-      <img src="{{member.profileImageUrl || './assets/user.png'}}" alt="{{member.knownAs}}" class="card-img-top img-thumbnail">
+      <img src="{{member.profilePhoto.url || './assets/user.png'}}" alt="{{member.knownAs}}" class="card-img-top img-thumbnail">
+      <div class="container text-center">
+        <div class="col-12 mb-3 px-3">
+          <input #fileInput style="display: none" type="file" ng2FileSelect [uploader]="uploader" (change)="updatePhoto()">
+          <button class="btn btn-sm btn-shred col-12" (click)="fileInput.click()"><i class="fa fa-edit"></i>Change Photo</button>
+        </div>
+      </div>
       <div class="card-body">
         <div>
           <h3><strong>{{member.knownAs}}</strong></h3>

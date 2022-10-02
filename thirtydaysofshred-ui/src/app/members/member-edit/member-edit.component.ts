@@ -56,6 +56,7 @@ export class MemberEditComponent implements OnInit {
       if (response) {
         const photo = JSON.parse(response);
         this.member.profilePhoto = photo;
+        this.user.photoUrl = photo.url;
       }
     }
   }

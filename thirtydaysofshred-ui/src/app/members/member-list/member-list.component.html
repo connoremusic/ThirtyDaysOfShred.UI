@@ -1,5 +1,55 @@
+<div class="text-center my-3">
+  <h2>Your search results - {{pagination?.totalItems}} found</h2>
+</div>
+
+<div class="container mt-1">
+    <form #form="ngForm" class="mb-3 row text-center" (ngSubmit)="loadMembers()" autocomplete="off">
+      <div class="col-auto col-form-label">
+        <label>Age from: </label>
+      </div>
+      <div class="col-auto">
+        <input type="number" class="form-control ml-1" style="width: 70px;" name="minAge" [(ngModel)]="userParams.minAge">
+      </div>
+      <div class="col-auto col-form-label">
+        <label>Age to: </label>
+      </div>
+      <div class="col-auto">
+        <input type="number" class="form-control ml-1" style="width: 70px;" name="maxAge" [(ngModel)]="userParams.maxAge">
+      </div>
+      <div class="col-auto col-form-label">
+        <label>Show: </label>
+      </div>
+      <div class="col-auto">
+        <select name="gender" style="width: 130px" class="form-control ml-1" [(ngModel)]="userParams.gender">
+          <option *ngFor="let gender of genderList" [value]="gender.value">{{gender.display}}</option>
+        </select>
+      </div>
+      <div class="col-auto">
+        <button class="btn btn-shred ml-1" type="submit">Apply Filters</button>
+      </div>
+      <div class="col-auto">
+        <button (click)="resetFilters()" class="btn btn-shred ml-1" type="submit">Reset Filters</button>
+      </div>
+
+    </form>
+</div>
+
 <div class="row">
-  <div *ngFor="let member of members$ | async" class="col-2">
+  <div *ngFor="let member of members" class="col-2">
     <app-member-card [member] = "member"></app-member-card>
   </div>
+</div>
+
+<div class="d-flex justify-content-center" *ngIf="pagination">
+  <pagination
+    [boundaryLinks]="true"
+    [totalItems]="pagination.totalItems"
+    [itemsPerPage]="pagination.itemsPerPage"
+    [(ngModel)]="pagination.currentPage"
+    (pageChanged)="pageChanged($event)"
+    previousText="&lsaquo;"
+    nextText="&rsaquo;"
+    firstText="&laquo;"
+    lastText="&raquo;">
+</pagination>
 </div>

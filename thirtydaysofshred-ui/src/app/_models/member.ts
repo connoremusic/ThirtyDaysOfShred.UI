@@ -1,5 +1,6 @@
 import { Tab } from './tab';
 import { ProfilePhoto } from './profile-photo';
+import { Goal } from './goal';
 
 export interface Member {
   id:               number;
@@ -11,7 +12,7 @@ export interface Member {
   country:          string;
   about:            string;
   influences:       string;
-  goals:            string[];
+  goals:            Goal[];
   created:          Date;
   lastActive:       Date;
   authoredTabs:     Tab[];

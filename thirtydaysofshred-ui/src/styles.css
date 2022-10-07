@@ -8,6 +8,14 @@ body {
   margin: 0;
 }
 
+a {
+  color: #2898dd;
+}
+
+a:hover {
+  color: #2287C7;
+}
+
 .btn-shred {
   color: #fff;
   background-color: #c80f0f;
@@ -99,4 +107,20 @@ body {
   display: flex;
   padding-left: 0;
   list-style: none;
+}
+
+.btn-link {
+  --bs-btn-font-weight: 400;
+  --bs-btn-color: #fff;
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-color: #c80f0f;
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-color: #c80f0f;
+  --bs-btn-active-border-color: transparent;
+  --bs-btn-disabled-color: #6c757d;
+  --bs-btn-disabled-border-color: transparent;
+  --bs-btn-box-shadow: none;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  text-decoration: none;
 }

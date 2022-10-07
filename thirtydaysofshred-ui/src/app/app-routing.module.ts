@@ -11,7 +11,7 @@ import { MemberEditComponent } from './members/member-edit/member-edit.component
 import { MemberListComponent } from './members/member-list/member-list.component';
 import { MessagesComponent } from './messages/messages.component';
 import { PracticeComponent } from './practice/practice.component';
-import { TabsComponent } from './tabs/tabs.component';
+import { TabListComponent } from './tabs/tab-list/tab-list.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.guard';
 
@@ -28,8 +28,8 @@ const routes: Routes = [
       {path: 'lists', component: ListsComponent},
       {path: 'messages', component: MessagesComponent},
       {path: 'practice', component: PracticeComponent},
-      {path: 'practice/exercises', component: ExercisesComponent},
-      {path: 'practice/tabs', component: TabsComponent}
+      {path: 'exercises', component: ExercisesComponent},
+      {path: 'tabs', component: TabListComponent}
     ]
   },
   {path: 'errors', component: TestErrorsComponent},

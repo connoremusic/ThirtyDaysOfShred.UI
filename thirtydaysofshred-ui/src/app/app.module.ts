@@ -24,7 +24,7 @@ import { MemberCardComponent } from './members/member-card/member-card.component
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 import { PracticeComponent } from './practice/practice.component';
 import { ExercisesComponent } from './exercises/exercises.component';
-import { TabsComponent } from './tabs/tabs.component';
+import { TabListComponent } from './tabs/tab-list/tab-list.component';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { LoadingInterceptor } from './_interceptors/loading.interceptor';
@@ -47,7 +47,7 @@ import { DateInputComponent } from './_forms/date-input/date-input.component';
     MemberCardComponent,
     PracticeComponent,
     ExercisesComponent,
-    TabsComponent,
+    TabListComponent,
     MemberEditComponent,
     TextInputComponent,
     DateInputComponent

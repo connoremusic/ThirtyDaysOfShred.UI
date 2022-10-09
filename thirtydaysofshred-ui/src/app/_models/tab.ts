@@ -11,5 +11,4 @@ export interface Tab {
   fileLocationUrl:   string;
   previewImageUrl:   string;
   numberOfFavorites: number;
-  numberOfLikes:     number;
 }

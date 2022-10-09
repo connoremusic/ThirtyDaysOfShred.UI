@@ -1,0 +1,52 @@
+<accordion [isAnimated]="true">
+  <accordion-group *ngFor="let tab of tabs">
+    <!-- Header for Guitar Tab -->
+    <div accordion-heading type="button">
+      <div class="row">
+        <div class="col text-start btn btn-link">
+          <h5>{{tab.title}}&nbsp;&nbsp;<i class="fa fa-caret-down"></i></h5>
+        </div>
+        <div class="col-lg-3 col-md-5 text-start mt-2">
+          <h5>Difficulty: <i *ngFor="let number of skillArray(tab.skillLevel)" class="fa fa-star" style="color: gold;">&nbsp;</i>
+          <i *ngFor="let number of skillArray(5 - tab.skillLevel)" class="fa fa-star-o">&nbsp;</i>
+          </h5>
+        </div>
+        <div class="col-1 mt-2">
+          <i class="fa fa-thumbs-up">&nbsp;{{tab.numberOfFavorites}}</i>
+        </div>
+      </div>
+    </div>
+    <!-- Inside Accordion -->
+    <div class="container">
+      <div class="row">
+        <div class="col p-3 m-1" style="background-color: rgb(61, 61, 61);">
+          <h3>Preview:</h3>
+          <img src="https://res.cloudinary.com/dhjtjjrgw/image/upload/v1664737897/crrevkgdhiamvsmtytle.jpg"
+            alt="Guitar Tab Preview Photo"
+            style="height: 20rem; margin: 1em;">
+        </div>
+        <div class="col p-3 m-1" style="background-color: rgb(61, 61, 61);">
+          <h3>Description:</h3>
+          <p>{{tab.description}}</p>
+          <h5>Author:</h5>
+          <p>{{tab.author}}</p>
+          <h5>Tags:</h5>
+          <small *ngFor="let tag of tab.tags"><a routerLink="/">{{tag.tagName}}</a>&nbsp;&nbsp;</small>
+        </div>
+        <div class="col">
+          <div>
+            <button class="btn btn-shred m-2"><i class="fa fa-thumbs-o-up"></i>&nbsp;Like</button>
+          </div>
+          <div>
+            <button (click)="addGuitarTabFavorite(tab.id)" class="btn btn-shred m-2"><i class="fa fa-heart-o"></i>&nbsp;Add to Favorites</button>
+          </div>
+          <div>
+            <button (click)="downloadTab(tab.fileLocationUrl)" class="btn m-2 btn-link"><i class="fa fa-download"></i>&nbsp;Download</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </accordion-group>
+
+</accordion>

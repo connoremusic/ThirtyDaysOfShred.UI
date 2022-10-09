@@ -98,4 +98,8 @@ export class MembersService {
 
       return params;
     }
+
+    addGuitarTabFavorite(guitarTabId: number) {
+      return this.httpClient.post(this.baseUrl + 'guitarTabs/' + guitarTabId, {});
+    }
   }

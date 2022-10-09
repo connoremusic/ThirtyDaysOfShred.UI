@@ -15,8 +15,6 @@ export interface Member {
   goals:            Goal[];
   created:          Date;
   lastActive:       Date;
-  authoredTabs:     Tab[];
   favoriteTabs:     Tab[];
-  likedTabs:        Tab[];
   practiceRoutines: Tab[];
 }

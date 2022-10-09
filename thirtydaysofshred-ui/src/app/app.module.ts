@@ -30,6 +30,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import { LoadingInterceptor } from './_interceptors/loading.interceptor';
 import { TextInputComponent } from './_forms/text-input/text-input.component';
 import { DateInputComponent } from './_forms/date-input/date-input.component';
+import { TabDetailsComponent } from './tabs/tab-details/tab-details.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { DateInputComponent } from './_forms/date-input/date-input.component';
     TabListComponent,
     MemberEditComponent,
     TextInputComponent,
-    DateInputComponent
+    DateInputComponent,
+    TabDetailsComponent
   ],
   imports: [
     BrowserModule,

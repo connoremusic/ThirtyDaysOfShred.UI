@@ -15,4 +15,8 @@ export class TabsService {
   getTabs() {
     return this.httpClient.get<Tab[]>(this.baseUrl + 'guitartabs');
   }
+
+  getFavoritedTabs(userId: number) {
+    return this.httpClient.get<Tab[]>(this.baseUrl + 'favorite-tabs/' + userId);
+  }
 }

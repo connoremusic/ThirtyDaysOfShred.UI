@@ -4,7 +4,7 @@
     <div accordion-heading type="button">
       <div class="row">
         <div class="col text-start btn btn-link">
-          <h5>{{tab.title}}&nbsp;&nbsp;<i class="fa fa-caret-down"></i></h5>
+          <h5>{{tab.title | titlecase}}&nbsp;&nbsp;<i class="fa fa-caret-down"></i></h5>
         </div>
         <div class="col-lg-3 col-md-5 text-start mt-2">
           <h5>Difficulty: <i *ngFor="let number of skillArray(tab.skillLevel)" class="fa fa-star" style="color: gold;">&nbsp;</i>

@@ -33,6 +33,7 @@
         </button>
         <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu mt-1" aria-labelledby="button-animated" role="menu">
           <li role="menuitem"><a routerLink="/members/{{user.username}}" class="dropdown-item" href="#">My Profile</a></li>
+          <li role="menuitem"><a routerLink="/messages" class="dropdown-item" href="#">Messages</a></li>
           <li role="menuitem"><a routerLink="/member/edit" class="dropdown-item" href="#">Edit Profile</a></li>
           <li role="menuitem"><a class="dropdown-item" href="#" (click)="logout()">Logout</a></li>
         </ul>

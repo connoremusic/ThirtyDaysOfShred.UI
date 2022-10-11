@@ -4,12 +4,13 @@
 
 <div class="container mt-1">
   <form #form="ngForm" class="mb-3 row end-xs justify-content-end" (ngSubmit)="loadTabs()" autocomplete="off">
+    <p class="col-auto col-form-label">Difficulty: </p>
     <div class="btn-group col-auto" dropdown>
       <button id="button-animated" dropdownToggle type="button" class="btn dropdown-toggle btn-shred"
         aria-controls="dropdown-animated">
-        Difficulty Level&nbsp;<span class="caret"></span>
+        {{selectedDifficulty}}&nbsp;<span class="caret"></span>
       </button>
-      <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu mt-1" aria-labelledby="button-animated" role="menu">
+      <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu mt-1" aria-labelledby="button-animated" role="menu" style="cursor: pointer;">
         <li role="menuitem"><a (click)="setSkillLevel(6)" class="dropdown-item">Any</a></li>
         <li role="menuitem"><a (click)="setSkillLevel(1)" class="dropdown-item">Beginner</a></li>
         <li role="menuitem"><a (click)="setSkillLevel(2)" class="dropdown-item">Easy</a></li>
@@ -19,7 +20,7 @@
       </ul>
     </div>
 
-    <div class="btn-group float-right col-auto">
+    <div class="btn-group col-auto">
       <button
         type="button"
         class="btn btn-shred"

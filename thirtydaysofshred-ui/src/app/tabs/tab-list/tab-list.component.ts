@@ -16,6 +16,7 @@ export class TabListComponent implements OnInit {
   tabParams: TabParams;
   user: User;
   currentSkillLevel: number;
+  selectedDifficulty: string = "Any";
 
   constructor(private tabsService: TabsService) {
     this.tabParams = this.tabsService.getTabParams();
@@ -54,6 +55,26 @@ export class TabListComponent implements OnInit {
   }
 
   setSkillLevel (n: number) {
+    switch (n) {
+      case 1:
+        this.selectedDifficulty = "Beginner";
+        break;
+      case 2:
+        this.selectedDifficulty = "Easy";
+        break;
+      case 3:
+        this.selectedDifficulty = "Medium";
+        break;
+      case 4:
+        this.selectedDifficulty = "Hard";
+        break;
+      case 5:
+        this.selectedDifficulty = "Advanced";
+        break;
+      case 6:
+        this.selectedDifficulty = "Any";
+        break;
+    }
     if (n < 6) {
       this.tabParams.minSkillLevel = n;
       this.tabParams.maxSkillLevel = n;

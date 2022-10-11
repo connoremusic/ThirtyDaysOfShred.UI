@@ -32,6 +32,7 @@ import { TextInputComponent } from './_forms/text-input/text-input.component';
 import { DateInputComponent } from './_forms/date-input/date-input.component';
 import { TabDetailsComponent } from './tabs/tab-details/tab-details.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MemberEditComponent,
     TextInputComponent,
     DateInputComponent,
-    TabDetailsComponent
+    TabDetailsComponent,
+    MemberMessagesComponent
   ],
   imports: [
     BrowserModule,

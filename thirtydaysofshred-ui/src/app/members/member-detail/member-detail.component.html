@@ -1,4 +1,4 @@
-<div class="row" *ngIf="member">
+<div class="row">
 
   <div class="col-12" *ngIf="member">
     <h1>My Profile</h1>
@@ -31,7 +31,7 @@
       <div class="card-footer">
         <div class="btn-group d-flex">
           <button class="btn btn-shred">Like</button>
-          <button class="btn btn-success">Message</button>
+          <button (click)="selectTab(3)" class="btn btn-success">Message</button>
         </div>
       </div>
     </div>
@@ -39,8 +39,8 @@
 
   <div class="col-8">
 
-    <tabset class="member-tabset">
-      <tab heading="About {{member.knownAs}}">
+    <tabset class="member-tabset" #memberTabs>
+      <tab heading="About {{member.knownAs}}" (selectTab)="onTabActivated($event)">
         <h4>About</h4>
         <p>{{member.about}}</p>
         <h4>Influences</h4>
@@ -48,17 +48,16 @@
         <h4>Goals</h4>
         <p *ngFor="let goal of member.goals">{{goal.description}}</p>
       </tab>
-      <tab heading="Practice Routines">
+      <tab heading="Practice Routines" (selectTab)="onTabActivated($event)">
         <h4>Practice Routines</h4>
         <p>{{member.practiceRoutines}}</p>
       </tab>
-      <tab heading="Favorite Tabs">
+      <tab heading="Favorite Tabs" (selectTab)="onTabActivated($event)">
         <h4>Favorite Tabs</h4>
         <app-tab-details [tabs]="member.favoriteTabs"></app-tab-details>
       </tab>
-      <tab heading="Messages">
-        <h4>Messages</h4>
-        <p>Messages will go here</p>
+      <tab heading="Messages" (selectTab)="onTabActivated($event)">
+        <app-member-messages [messages]="messages" [username]="member.username"></app-member-messages>
       </tab>
     </tabset>
 

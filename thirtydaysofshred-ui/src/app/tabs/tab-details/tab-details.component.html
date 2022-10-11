@@ -10,8 +10,8 @@
           <p style="color: orange"><fa-icon [icon]="faFireFlameCurved"></fa-icon>&nbsp;NEW!</p>
         </div>
         <div class="col-lg-3 col-md-5 text-start mt-2">
-          <h5>Difficulty: <i *ngFor="let number of skillArray(tab.skillLevel)" class="fa fa-star" style="color: gold;">&nbsp;</i>
-          <i *ngFor="let number of skillArray(5 - tab.skillLevel)" class="fa fa-star-o">&nbsp;</i>
+          <h5>Difficulty: <fa-icon *ngFor="let number of skillArray(tab.skillLevel)" [icon]="faGuitar" style="color: gold;">&nbsp;</fa-icon>
+          <fa-icon *ngFor="let number of skillArray(5 - tab.skillLevel)" [icon]="faGuitar">&nbsp;</fa-icon>
           </h5>
         </div>
         <div class="col-1 mt-2">

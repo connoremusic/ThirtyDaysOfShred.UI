@@ -4,6 +4,7 @@ import { Tab } from 'src/app/_models/tab';
 import { MembersService } from 'src/app/_services/members.service';
 import { faFire } from '@fortawesome/free-solid-svg-icons'
 import { faFireFlameCurved } from '@fortawesome/free-solid-svg-icons'
+import { faGuitar } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-tab-details',
@@ -14,6 +15,7 @@ export class TabDetailsComponent implements OnInit {
   @Input() tabs: Tab[];
   faFire = faFire;
   faFireFlameCurved = faFireFlameCurved;
+  faGuitar = faGuitar;
 
   constructor(private memberService: MembersService, private toastr: ToastrService) { }
 

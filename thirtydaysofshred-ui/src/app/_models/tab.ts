@@ -5,6 +5,7 @@ export interface Tab {
   title:             string;
   description:       string;
   skillLevel:        number;
+  created:           Date;
   author:            string;
   isPublic:          boolean;
   tags:              Tag[];

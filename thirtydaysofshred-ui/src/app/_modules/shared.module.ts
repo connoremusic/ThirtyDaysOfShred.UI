@@ -9,7 +9,7 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { TimeagoModule } from 'ngx-timeago';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [],
@@ -25,7 +25,8 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
     PaginationModule.forRoot(),
     ButtonsModule.forRoot(),
     TimeagoModule.forRoot(),
-    AccordionModule.forRoot()
+    AccordionModule.forRoot(),
+    FontAwesomeModule
   ],
   exports: [
     BsDropdownModule,
@@ -37,7 +38,8 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
     PaginationModule,
     ButtonsModule,
     TimeagoModule,
-    AccordionModule
+    AccordionModule,
+    FontAwesomeModule
   ]
 })
 export class SharedModule { }

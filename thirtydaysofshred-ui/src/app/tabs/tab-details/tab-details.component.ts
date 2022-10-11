@@ -2,6 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Tab } from 'src/app/_models/tab';
 import { MembersService } from 'src/app/_services/members.service';
+import { faFire } from '@fortawesome/free-solid-svg-icons'
+import { faFireFlameCurved } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-tab-details',
@@ -10,6 +12,8 @@ import { MembersService } from 'src/app/_services/members.service';
 })
 export class TabDetailsComponent implements OnInit {
   @Input() tabs: Tab[];
+  faFire = faFire;
+  faFireFlameCurved = faFireFlameCurved;
 
   constructor(private memberService: MembersService, private toastr: ToastrService) { }
 
@@ -36,6 +40,17 @@ export class TabDetailsComponent implements OnInit {
     document.body.appendChild(link);
     link.click();
     link.remove();
+  }
+
+  isNew(date: Date) {
+    let tabDate = new Date(date);
+    let now = Date.now();
+    let nowDate = new Date(now);
+    let cutoffDate = new Date(nowDate.setDate(nowDate.getDate() - 7));
+
+    if (tabDate.getDate() - cutoffDate.getDate() > 0) return true;
+
+    return false;
   }
 
 }

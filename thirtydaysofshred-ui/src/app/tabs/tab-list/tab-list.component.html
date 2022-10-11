@@ -2,8 +2,63 @@
   <h2>Search for Guitar Tabs</h2>
 </div>
 
-<div class="m-5 text-center">
-  <input type="text" placeholder="Search">
+<div class="container mt-1">
+  <form #form="ngForm" class="mb-3 row end-xs justify-content-end" (ngSubmit)="loadTabs()" autocomplete="off">
+    <div class="btn-group col-auto" dropdown>
+      <button id="button-animated" dropdownToggle type="button" class="btn dropdown-toggle btn-shred"
+        aria-controls="dropdown-animated">
+        Difficulty Level&nbsp;<span class="caret"></span>
+      </button>
+      <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu mt-1" aria-labelledby="button-animated" role="menu">
+        <li role="menuitem"><a (click)="setSkillLevel(6)" class="dropdown-item">Any</a></li>
+        <li role="menuitem"><a (click)="setSkillLevel(1)" class="dropdown-item">Beginner</a></li>
+        <li role="menuitem"><a (click)="setSkillLevel(2)" class="dropdown-item">Easy</a></li>
+        <li role="menuitem"><a (click)="setSkillLevel(3)" class="dropdown-item">Medium</a></li>
+        <li role="menuitem"><a (click)="setSkillLevel(4)" class="dropdown-item">Hard</a></li>
+        <li role="menuitem"><a (click)="setSkillLevel(5)" class="dropdown-item">Advanced</a></li>
+      </ul>
+    </div>
+
+    <div class="btn-group float-right col-auto">
+      <button
+        type="button"
+        class="btn btn-shred"
+        name="orderBy"
+        (click)="loadTabs()"
+        btnRadio="created"
+        [(ngModel)]="tabParams.orderBy">Newest</button>
+
+        <button
+        type="button"
+        class="btn btn-shred"
+        name="orderBy"
+        (click)="loadTabs()"
+        btnRadio="popular"
+        [(ngModel)]="tabParams.orderBy">Most Popular</button>
+    </div>
+    <div class="col-auto">
+      <div class="input-group">
+        <input type="text" class="form-control" [(ngModel)]="tabParams.searchString" name="searchBar" placeholder="Search" aria-label="Search" aria-describedby="button-addon2">
+        <button class="btn btn-shred" (click)="loadTabs()" type="submit" id="button-addon2"><i class="fa fa-search"></i></button>
+      </div>
+    </div>
+  </form>
 </div>
 
+
+
 <app-tab-details [tabs]="tabs"></app-tab-details>
+
+<div class="d-flex justify-content-center mt-5" *ngIf="pagination">
+  <pagination
+    [boundaryLinks]="true"
+    [totalItems]="pagination.totalItems"
+    [itemsPerPage]="pagination.itemsPerPage"
+    [(ngModel)]="pagination.currentPage"
+    (pageChanged)="pageChanged($event)"
+    previousText="&lsaquo;"
+    nextText="&rsaquo;"
+    firstText="&laquo;"
+    lastText="&raquo;">
+</pagination>
+</div>

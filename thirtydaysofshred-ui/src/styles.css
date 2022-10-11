@@ -20,6 +20,8 @@ a:hover {
   color: #fff;
   background-color: #c80f0f;
   border-color: darkred;
+  --bs-btn-active-bg: darkred;
+  --bs-btn-active-border-color: darkred;
 }
 
 .btn-shred:hover {

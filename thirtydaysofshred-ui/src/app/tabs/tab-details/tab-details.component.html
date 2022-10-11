@@ -6,6 +6,9 @@
         <div class="col text-start btn btn-link">
           <h5>{{tab.title | titlecase}}&nbsp;&nbsp;<i class="fa fa-caret-down"></i></h5>
         </div>
+        <div class="col-2 mt-2" *ngIf="isNew(tab.created)">
+          <p style="color: orange"><fa-icon [icon]="faFireFlameCurved"></fa-icon>&nbsp;NEW!</p>
+        </div>
         <div class="col-lg-3 col-md-5 text-start mt-2">
           <h5>Difficulty: <i *ngFor="let number of skillArray(tab.skillLevel)" class="fa fa-star" style="color: gold;">&nbsp;</i>
           <i *ngFor="let number of skillArray(5 - tab.skillLevel)" class="fa fa-star-o">&nbsp;</i>
@@ -31,7 +34,7 @@
           <h5>Author:</h5>
           <p>{{tab.author}}</p>
           <h5>Tags:</h5>
-          <small *ngFor="let tag of tab.tags"><a routerLink="/">{{tag.tagName}}</a>&nbsp;&nbsp;</small>
+          <small *ngFor="let tag of tab.tags"><a routerLink="/tabs">{{tag.tagName}}</a>&nbsp;&nbsp;</small>
         </div>
         <div class="col">
           <div>

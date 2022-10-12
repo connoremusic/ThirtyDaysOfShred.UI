@@ -17,6 +17,9 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="/tabs" routerLinkActive="active">Tabs</a>
           </li>
+          <li *appHasRole="['Admin', 'Moderator']" class="nav-item">
+            <a class="nav-link" routerLink="/admin" routerLinkActive="active">Admin</a>
+          </li>
         </ng-container>
         <li class="nav-item">
           <a class="nav-link" routerLink="/errors" routerLinkActive="active">Errors</a>
@@ -35,7 +38,7 @@
           <li role="menuitem"><a routerLink="/members/{{user.username}}" class="dropdown-item" href="#">My Profile</a></li>
           <li role="menuitem"><a routerLink="/messages" class="dropdown-item" href="#">Messages</a></li>
           <li role="menuitem"><a routerLink="/member/edit" class="dropdown-item" href="#">Edit Profile</a></li>
-          <li role="menuitem"><a class="dropdown-item" href="#" (click)="logout()">Logout</a></li>
+          <li role="menuitem"><a class="dropdown-item" href="/" (click)="logout()">Logout</a></li>
         </ul>
       </div>
 

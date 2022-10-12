@@ -33,6 +33,11 @@ import { DateInputComponent } from './_forms/date-input/date-input.component';
 import { TabDetailsComponent } from './tabs/tab-details/tab-details.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
+import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
+import { HasRoleDirective } from './_directives/has-role.directive';
+import { UserManagementComponent } from './admin/user-management/user-management.component';
+import { TabManagementComponent } from './admin/tab-management/tab-management.component';
+import { RolesModalComponent } from './modals/roles-modal/roles-modal.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +60,12 @@ import { MemberMessagesComponent } from './members/member-messages/member-messag
     TextInputComponent,
     DateInputComponent,
     TabDetailsComponent,
-    MemberMessagesComponent
+    MemberMessagesComponent,
+    AdminPanelComponent,
+    HasRoleDirective,
+    UserManagementComponent,
+    TabManagementComponent,
+    RolesModalComponent
   ],
   imports: [
     BrowserModule,

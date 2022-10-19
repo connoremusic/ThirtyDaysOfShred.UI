@@ -13,6 +13,7 @@ import { MemberEditComponent } from './members/member-edit/member-edit.component
 import { MemberListComponent } from './members/member-list/member-list.component';
 import { MessagesComponent } from './messages/messages.component';
 import { PracticeComponent } from './practice/practice.component';
+import { NewTabComponent } from './tabs/new-tab/new-tab.component';
 import { TabListComponent } from './tabs/tab-list/tab-list.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.guard';
@@ -33,7 +34,8 @@ const routes: Routes = [
       {path: 'admin', component: AdminPanelComponent, canActivate: [AdminGuard]},
       {path: 'practice', component: PracticeComponent},
       {path: 'exercises', component: ExercisesComponent},
-      {path: 'tabs', component: TabListComponent}
+      {path: 'tabs', component: TabListComponent},
+      {path: 'tabs/add-new', component: NewTabComponent, canActivate: [AdminGuard]}
     ]
   },
   {path: 'errors', component: TestErrorsComponent},

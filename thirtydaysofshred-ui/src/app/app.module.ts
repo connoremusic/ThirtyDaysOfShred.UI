@@ -38,6 +38,7 @@ import { HasRoleDirective } from './_directives/has-role.directive';
 import { UserManagementComponent } from './admin/user-management/user-management.component';
 import { TabManagementComponent } from './admin/tab-management/tab-management.component';
 import { RolesModalComponent } from './modals/roles-modal/roles-modal.component';
+import { NewTabComponent } from './tabs/new-tab/new-tab.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { RolesModalComponent } from './modals/roles-modal/roles-modal.component'
     HasRoleDirective,
     UserManagementComponent,
     TabManagementComponent,
-    RolesModalComponent
+    RolesModalComponent,
+    NewTabComponent
   ],
   imports: [
     BrowserModule,

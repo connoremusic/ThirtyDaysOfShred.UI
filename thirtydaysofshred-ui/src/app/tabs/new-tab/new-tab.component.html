@@ -1,0 +1,39 @@
+<div class="container mx-auto">
+  <h1 class="text-center">Add New Tab</h1>
+    <form action="" class="col col-lg-6 justify-content-center mx-auto">
+      <div class="p-5 pt-1">
+        <h3 class="col">Title: </h3>
+        <input type="text" class="form-control col" name="tabTitle" placeholder="Title" aria-label="Search" aria-describedby="button-addon2">
+        <br>
+        <h3 class="col">Description: </h3>
+        <textarea class="form-control" name="" id="" cols="30" rows="5"></textarea>
+        <br>
+        <h3 class="col">Author: </h3>
+        <input type="text" class="form-control col" name="tabTitle" placeholder="Author" aria-label="Search" aria-describedby="button-addon2">
+        <br>
+        <h3 class="col">Skill Level: </h3>
+        <div class="btn-group" btnRadioGroup>
+          <label class="btn btn-shred" [(ngModel)]="radioModel" name="Beginner"
+                  btnRadio="Beginner" tabindex="0" role="button">Beginner</label>
+          <label class="btn btn-shred" [(ngModel)]="radioModel" name="Easy"
+                  btnRadio="Easy" tabindex="0" role="button">Easy</label>
+          <label class="btn btn-shred" [(ngModel)]="radioModel" name="Medium"
+                  btnRadio="Medium" tabindex="0" role="button">Medium</label>
+          <label class="btn btn-shred" [(ngModel)]="radioModel" name="Hard"
+                  btnRadio="Hard" tabindex="0" role="button">Hard</label>
+          <label class="btn btn-shred" [(ngModel)]="radioModel" name="Advanced"
+                  btnRadio="Advanced" tabindex="0" role="button">Advanced</label>
+        </div>
+        <br><br>
+        <h3>Tab File: </h3>
+        <input type="file">
+        <br><br>
+        <h3>Preview Image: </h3>
+        <input type="file">
+        <br><br>
+        <div class="text-end">
+          <button class="btn btn-primary col" type="submit" id="button-addon2"><i class="fa fa-save"></i> Save</button>
+        </div>
+      </div>
+    </form>
+</div>

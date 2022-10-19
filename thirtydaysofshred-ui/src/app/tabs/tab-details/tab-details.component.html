@@ -15,7 +15,7 @@
           </h5>
         </div>
         <div class="col-1 mt-2">
-          <i class="fa fa-thumbs-up">&nbsp;{{tab.numberOfFavorites}}</i>
+          <p><i class="fa fa-heart" style="color:red"></i>&nbsp;&nbsp;{{tab.numberOfFavorites}}</p>
         </div>
       </div>
     </div>
@@ -28,26 +28,23 @@
             alt="Guitar Tab Preview Photo"
             style="height: 20rem; margin: 1em;">
         </div>
-        <div class="col p-3 m-1" style="background-color: rgb(61, 61, 61);">
+        <div class="col-md-4 col-sm-12 p-3 m-1" style="background-color: rgb(61, 61, 61);">
           <h3>Description:</h3>
           <p>{{tab.description}}</p>
           <h5>Author:</h5>
           <p>{{tab.author}}</p>
           <h5>Tags:</h5>
           <small *ngFor="let tag of tab.tags"><a routerLink="/tabs">{{tag.tagName}}</a>&nbsp;&nbsp;</small>
-        </div>
-        <div class="col">
-          <div>
-            <button class="btn btn-shred m-2"><i class="fa fa-thumbs-o-up"></i>&nbsp;Like</button>
-          </div>
           <div>
             <button (click)="addGuitarTabFavorite(tab.id)" class="btn btn-shred m-2"><i class="fa fa-heart-o"></i>&nbsp;Add to Favorites</button>
           </div>
           <div>
             <button (click)="downloadTab(tab.fileLocationUrl)" class="btn m-2 btn-link"><i class="fa fa-download"></i>&nbsp;Download</button>
           </div>
+          <div>
+            <button *appHasRole="['Admin', 'Moderator']" class="btn m-2 btn-primary"><i class="fa fa-edit"></i>&nbsp;Edit Tab</button>
+          </div>
         </div>
-
       </div>
     </div>
   </accordion-group>

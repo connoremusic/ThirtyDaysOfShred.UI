@@ -56,6 +56,10 @@ export class TabsService {
     return this.httpClient.get<Tab[]>(this.baseUrl + 'favorite-tabs/' + userId);
   }
 
+  addNewTab() {
+
+  }
+
   private getPaginatedResult<T>(url, params) {
     const paginatedResult: PaginatedResult<T> = new PaginatedResult<T>();
 
